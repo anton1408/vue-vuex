@@ -8,6 +8,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "App",
+  mounted() {
+    this.$store.dispatch("GET_USERS_LIST");
+    console.log(this.$store.getters.USERS_LIST);
+  }
+};
+</script>
+
 <style lang="scss">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
