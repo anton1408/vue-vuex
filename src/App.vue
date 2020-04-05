@@ -13,19 +13,18 @@ export default {
   name: "App",
   mounted() {
     this.$store.dispatch("GET_USERS_LIST");
-    console.log(this.$store.getters.USERS_LIST);
   }
 };
 </script>
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+   font-family: "Avenir", Helvetica, Arial, sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   /*text-align: center;*/
+   color: #2c3e50;
+ }
 #nav {
   padding: 30px;
   a {

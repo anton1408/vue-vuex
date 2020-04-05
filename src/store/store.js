@@ -7,7 +7,7 @@ Vue.use(Vuex, VueAxios, axios);
 
 export default new Vuex.Store({
   state: {
-    usersList: {}
+    usersList: []
   },
   getters: {
     USERS_LIST: state => {
@@ -16,7 +16,16 @@ export default new Vuex.Store({
   },
   mutations: {
     SET_USERS_LIST: (state, payload) => {
-      state.usersList = payload;
+      // state.usersList = payload;
+      payload.map(el => {
+        state.usersList.push({
+          name: `${el.name.first} ${el.name.last}`,
+          email: el.email,
+          picture: el.picture.thumbnail,
+          id: el.login.uuid
+        });
+      });
+      console.log(payload);
     }
   },
   actions: {
@@ -24,7 +33,7 @@ export default new Vuex.Store({
       let {
         data: { results }
       } = await axios.get(
-        "https://randomuser.me/api/?results=20&inc=id,picture,name,location,email,gender,dob,phone&noinfo"
+        "https://randomuser.me/api/?results=20&inc=login,picture,name,location,email,gender,dob,phone&noinfo"
       );
       context.commit("SET_USERS_LIST", results);
     }
