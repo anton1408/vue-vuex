@@ -6,11 +6,19 @@
       </div>
 
       <md-field md-clearable class="md-toolbar-section-end">
-        <md-input v-model="search" placeholder="Search by name..." @input="searchOnTable" />
+        <md-input
+          v-model="search"
+          placeholder="Search by name..."
+          @input="searchOnTable"
+        />
       </md-field>
     </md-table-toolbar>
 
-    <md-table-row-modified :user-id="item.id" slot="md-table-row" slot-scope="{ item, index }">
+    <md-table-row-modified
+      :user-id="item.id"
+      slot="md-table-row"
+      slot-scope="{ item, index }"
+    >
       <md-table-cell md-label="№" md-numeric>{{ index + 1 }}</md-table-cell>
       <md-table-cell md-label="ID">{{ item.id }}</md-table-cell>
       <md-table-cell md-label="Avatar"><img :src="item.picture" alt="avatar"></md-table-cell>
@@ -52,6 +60,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-</style>

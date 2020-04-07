@@ -16,7 +16,6 @@ export default new Vuex.Store({
   },
   mutations: {
     SET_USERS_LIST: (state, payload) => {
-      // state.usersList = payload;
       payload.map(el => {
         state.usersList.push({
           name: `${el.name.first} ${el.name.last}`,
@@ -31,7 +30,6 @@ export default new Vuex.Store({
           birthday: el.dob.date
         });
       });
-      console.log(payload);
     }
   },
   actions: {
