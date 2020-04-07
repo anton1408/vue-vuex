@@ -22,7 +22,13 @@ export default new Vuex.Store({
           name: `${el.name.first} ${el.name.last}`,
           email: el.email,
           picture: el.picture.thumbnail,
-          id: el.login.uuid
+          pictureLarge: el.picture.large,
+          id: el.login.uuid,
+          city: el.location.city,
+          address: `${el.location.street.name} ${el.location.street.number}`,
+          phone: el.phone,
+          gender: el.gender,
+          birthday: el.dob.date
         });
       });
       console.log(payload);
